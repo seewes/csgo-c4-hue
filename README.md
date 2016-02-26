@@ -1,9 +1,10 @@
-# csgo-c4-hue
+# csgo-c4-hue-node
+
 These scripts will change the colors of your Philips Hue lights based on the C4 bomb status in Counter-Strike: Global Offensive.
 
 [![CS:GO C4 Hue Lights](http://i.imgur.com/2lrbSMc.gif)](https://www.youtube.com/watch?v=QBdI54MHB-k)
 
-The Node.js version can be found here: [csgo-c4-hue-node](https://github.com/doobix/csgo-c4-hue-node)
+The Python version can be found here: [csgo-c4-hue](https://github.com/doobix/csgo-c4-hue)
 
 ## Features
 
@@ -21,29 +22,26 @@ The Node.js version can be found here: [csgo-c4-hue-node](https://github.com/doo
 
   Windows: `C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\cfg`
 
-2. Install Python 2.7 if your machine doesn't have it.
-3. Install Flask via pip.
+2. Install Node.js and npm if your machine doesn't have them.
 
-  OS X: `pip install flask`
+3. Run `npm install`
 
-  Windows: `C:\Python27\Scripts\pip.exe install flask`
-
-4. Edit `csgo-c4-hue.py` and fill in the values for your [hue bridge IP](#how-to-get-hue-bridge-ip) and [hue user](#how-to-make-a-hue-user).
+4. Edit `csgo-c4-hue.js` and fill in the values for your [hue bridge IP](#how-to-get-hue-bridge-ip) and [hue user](#how-to-make-a-hue-user).
 
   Example:
 
   ```
-  HUE_BRIDGE_IP = '192.168.1.100'
-  HUE_USER = '1a2a3a4a5a6a7a8a9a0a'
+  var HUE_BRIDGE_IP = '192.168.1.100'
+  var HUE_USER = '1a2a3a4a5a6a7a8a9a0a'
   ```
 
 ## Usage
 
-Run both `csgo-c4-hue.py` and `csgo-c4-hue-server.py` scripts while playing CS:GO.
+Run `node csgo-c4-hue.js` and `node csgo-c4-hue-server.js` while playing CS:GO.
 
-The `csgo-c4-hue-server.py` script will be receiving the gamestate data from CS:GO and it will write the bomb status to the file named `bomb_status`.
+The `csgo-c4-hue-server.js` script will be receiving the gamestate data from CS:GO and it will write the bomb status to the file named `bomb_status`.
 
-The `csgo-c4-hue.py` script will be reading the `bomb_status` file every 250 ms and will change the hue lights depending on what is in that file.
+The `csgo-c4-hue.js` script will be reading the `bomb_status` file every 250 ms and will change the hue lights depending on what is in that file.
 
 ## Appendix
 
